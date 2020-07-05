@@ -15,18 +15,30 @@
         <module>learning-01-provider</module>
         <module>learning-common-pojo</module>
         <module>learning-01-consumer</module>
+        <module>learning-02-eureka</module>
+        <module>learning-02-provider</module>
+        <module>learning-02-consumer</module>
+        <module>learning-03-consumer</module>
+        <module>learning-03-eureka</module>
+        <module>learning-03-provider</module>
     </modules>
 
     <properties>
+        <!--
+            版本必须匹配上，确保是同一日期发布的版本
+            springboot、springcloud、eureka 版本不匹配的话，各种类找不到
+        -->
         <java.version>1.8</java.version>
-        <springcloud.version>Hoxton.SR4</springcloud.version>
-        <springboot.version>2.3.1.RELEASE</springboot.version>
+        <spring-cloud.version>Greenwich.SR1</spring-cloud.version>
+        <springboot.version>2.1.4.RELEASE</springboot.version>
         <lombok.version>1.18.12</lombok.version>
         <mysql.version>8.0.20</mysql.version>
         <druid.version>1.1.23</druid.version>
         <mybatis.version>2.1.1</mybatis.version>
         <fastjson.version>1.2.68</fastjson.version>
-        <jackson.version>2.11.1</jackson.version>
+        <jackson.version>2.9.10</jackson.version>
+        <eureka.version>1.4.7.RELEASE</eureka.version>
+        <feign.version>2.2.0.RELEASE</feign.version>
     </properties>
 
 
@@ -35,7 +47,7 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${springcloud.version}</version>
+                <version>${spring-cloud.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -47,6 +59,28 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+                <version>${eureka.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-openfeign</artifactId>
+                <version>${feign.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>mysql</groupId>
@@ -106,6 +140,14 @@
                 <enabled>true</enabled>
             </releases>
             <!-- 是否开启快照版构件下载 -->
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
