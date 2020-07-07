@@ -11,5 +11,4 @@
 使用feign，替换02中的 RestTemplate+Ribbon 调用方式
 
 #### 04 
-合并02&03，两种调用方式并存。
 增加Hystrix组件，实现服务熔断。
