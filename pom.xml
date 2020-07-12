@@ -24,6 +24,12 @@
         <module>learning-04-consumer</module>
         <module>learning-04-eureka</module>
         <module>learning-04-provider</module>
+        <module>learning-05-consumer</module>
+        <module>learning-05-eureka-01</module>
+        <module>learning-05-eureka-02</module>
+        <module>learning-05-provider-order</module>
+        <module>learning-05-provider-user</module>
+        <module>learning-05-provider-user-2</module>
     </modules>
 
     <properties>

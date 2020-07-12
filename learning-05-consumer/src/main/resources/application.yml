@@ -1,0 +1,14 @@
+server:
+  port: 8021
+
+spring:
+  application:
+    name: learning-05-consumer
+
+
+eureka:
+  client:
+    register-with-eureka: false
+    service-url:
+      defaultZone: http://eureka01.com:7021/eureka/
+

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jero.springcloud.mapper.User1Mapper">
+
+
+
+    <select id="getUserById" parameterType="int" resultType="com.jero.springcloud.pojo.shop.ScUser">
+        select * from sc_user where id=#{value}
+    </select>
+
+    <select id="getAllUser" resultType="com.jero.springcloud.pojo.shop.ScUser">
+        select * from sc_user
+    </select>
+
+
+
+
+
+</mapper>
